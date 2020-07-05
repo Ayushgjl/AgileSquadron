@@ -1,8 +1,10 @@
-package com.example.agilesquadron;
+package com.example.agilesquadron.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.agilesquadron.R;
 
 public class LoginActivity extends AppCompatActivity {
 

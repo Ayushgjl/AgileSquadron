@@ -3,6 +3,8 @@ package com.example.agilesquadron;
 import androidx.test.espresso.action.ViewActions;
 import androidx.test.rule.ActivityTestRule;
 
+import com.example.agilesquadron.ui.LoginActivity;
+
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -18,7 +20,7 @@ public class LoginTest {
 
     @Test
     public void LoginTest(){
-        onView(withId(R.id.etEmail))
+        onView(withId(R.id.etUsername))
                 .perform(typeText("arjudutta1"))
                 .perform(ViewActions.closeSoftKeyboard());
 

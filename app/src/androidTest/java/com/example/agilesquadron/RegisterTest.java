@@ -3,6 +3,8 @@ package com.example.agilesquadron;
 import androidx.test.espresso.action.ViewActions;
 import androidx.test.rule.ActivityTestRule;
 
+import com.example.agilesquadron.ui.RegisterActivity;
+
 import org.junit.Rule;
 import org.junit.Test;
 
