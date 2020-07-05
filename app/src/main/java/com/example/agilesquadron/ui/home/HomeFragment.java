@@ -18,8 +18,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.agilesquadron.R;
+import com.example.agilesquadron.adapter.ElectronicAdapter;
 import com.example.agilesquadron.adapter.FoodAdapter;
+import com.example.agilesquadron.api.EApi;
 import com.example.agilesquadron.api.FoodApi;
+import com.example.agilesquadron.model.Electronic;
 import com.example.agilesquadron.model.Food;
 import com.example.agilesquadron.ui.url.Url;
 
@@ -36,6 +39,9 @@ public class HomeFragment extends Fragment {
     List<Food> foodList;
     FoodAdapter FoodAdapter;
 
+    List<Electronic> eList;
+    ElectronicAdapter ElectronicAdapter;
+
     RecyclerView recyclerView_a, recyclerView_b;
     ImageView card1,card2;
 
@@ -48,9 +54,10 @@ public class HomeFragment extends Fragment {
         recyclerView_a=root.findViewById(R.id.recyclerView_a);
         recyclerView_b=root.findViewById(R.id.recyclerView_b);
         card1=root.findViewById(R.id.card1);
-        //card2=root.findViewById(R.id.card2);
+        card2=root.findViewById(R.id.card2);
 
         Food();
+        Electronic();
         return root;
     }
 
@@ -75,6 +82,35 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onFailure(Call<List<Food>> call, Throwable t) {
+
+                Log.d("Error Message", "Error" + t.getLocalizedMessage());
+                Toast.makeText(getActivity(), "Error", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+    }
+
+    private  void Electronic(){
+        eList = new ArrayList<>();
+
+        EApi E = Url.getInstance().create(EApi.class);
+        Call<List<Electronic>> listCall=E.getElectronic();
+        listCall.enqueue(new Callback<List<Electronic>>() {
+            @Override
+            public void onResponse(Call<List<Electronic>> call, Response<List<Electronic>> response) {
+                if (!response.isSuccessful()){
+                    Toast.makeText(getContext(), "Error" + response.code(), Toast.LENGTH_SHORT).show();
+                }
+
+                List<Electronic> eList1=response.body();
+                ElectronicAdapter=new ElectronicAdapter(getContext(),eList1);
+                recyclerView_b.setAdapter(ElectronicAdapter);
+                recyclerView_b.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
+                recyclerView_b.setHasFixedSize(true);
+            }
+
+            @Override
+            public void onFailure(Call<List<Electronic>> call, Throwable t) {
 
                 Log.d("Error Message", "Error" + t.getLocalizedMessage());
                 Toast.makeText(getActivity(), "Error", Toast.LENGTH_SHORT).show();
