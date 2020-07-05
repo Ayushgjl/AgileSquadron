@@ -25,6 +25,9 @@ import com.example.agilesquadron.api.FoodApi;
 import com.example.agilesquadron.model.Electronic;
 import com.example.agilesquadron.model.Food;
 import com.example.agilesquadron.ui.url.Url;
+import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageClickListener;
+import com.synnapps.carouselview.ImageListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +45,14 @@ public class HomeFragment extends Fragment {
     List<Electronic> eList;
     ElectronicAdapter ElectronicAdapter;
 
+    private int[] mImages=new int[]{
+            R.drawable.slide1,R.drawable.slide2,R.drawable.slide3,R.drawable.slide4
+    };
+
+    private String [] mImageTitle=new String[]{
+            "food","electronic","clothes","gifts"
+    };
+
     RecyclerView recyclerView_a, recyclerView_b;
     ImageView card1,card2;
 
@@ -55,6 +66,23 @@ public class HomeFragment extends Fragment {
         recyclerView_b=root.findViewById(R.id.recyclerView_b);
         card1=root.findViewById(R.id.card1);
         card2=root.findViewById(R.id.card2);
+
+        CarouselView carouselView;
+        carouselView=root.findViewById(R.id.caral);
+        carouselView.setPageCount(mImages.length);
+        carouselView.setImageListener(new ImageListener() {
+            @Override
+            public void setImageForPosition(int position, ImageView imageView) {
+                imageView.setImageResource(mImages[position]);
+            }
+        });
+
+        carouselView.setImageClickListener(new ImageClickListener() {
+            @Override
+            public void onClick(int position) {
+                Toast.makeText(getContext(), mImageTitle[position], Toast.LENGTH_SHORT).show();
+            }
+        });
 
         Food();
         Electronic();
