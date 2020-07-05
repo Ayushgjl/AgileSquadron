@@ -123,6 +123,7 @@
                 android:layout_height="82dp"
                 android:layout_marginLeft="150dp"
                 android:layout_marginRight="10dp"
+                android:src="@drawable/f"
                 android:clickable="true"
                 />
 
@@ -130,6 +131,7 @@
                 android:id="@+id/insta"
                 android:layout_width="52dp"
                 android:layout_height="82dp"
+                android:src="@drawable/i"
                 android:clickable="true"
                 />
 

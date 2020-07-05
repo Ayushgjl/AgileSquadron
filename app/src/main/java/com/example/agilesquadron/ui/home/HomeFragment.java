@@ -1,5 +1,7 @@
 package com.example.agilesquadron.ui.home;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -54,7 +56,7 @@ public class HomeFragment extends Fragment {
     };
 
     RecyclerView recyclerView_a, recyclerView_b;
-    ImageView card1,card2;
+    ImageView card1,card2,facebook,insta;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -66,6 +68,8 @@ public class HomeFragment extends Fragment {
         recyclerView_b=root.findViewById(R.id.recyclerView_b);
         card1=root.findViewById(R.id.card1);
         card2=root.findViewById(R.id.card2);
+        facebook=root.findViewById(R.id.facebook);
+        insta=root.findViewById(R.id.insta);
 
         CarouselView carouselView;
         carouselView=root.findViewById(R.id.caral);
@@ -81,6 +85,24 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(int position) {
                 Toast.makeText(getContext(), mImageTitle[position], Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri= Uri.parse("https://www.facebook.com/");
+                Intent intent= new Intent(Intent.ACTION_VIEW,uri);
+                startActivity(intent);
+            }
+        });
+
+        insta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri= Uri.parse("https://www.instagram.com/");
+                Intent intent1= new Intent(Intent.ACTION_VIEW,uri);
+                startActivity(intent1);
             }
         });
 
