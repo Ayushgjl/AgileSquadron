@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ui.ElectronicCartActivity">
+
+    <ImageView
+        android:id="@+id/AddE"
+        android:layout_width="285dp"
+        android:layout_height="246dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="71dp"
+        android:layout_marginEnd="38dp"
+        android:src="@drawable/user" />
+
+    <TextView
+        android:id="@+id/tvElec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:hint="Name"
+        android:textSize="20sp"
+        android:layout_below="@+id/AddE"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/tvAddQuantity"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:textSize="20sp"
+        android:layout_below="@+id/tvElec"
+        android:gravity="center"
+        android:text="Quantity" />
+
+    <TextView
+        android:id="@+id/tvAddPrice"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:textSize="20sp"
+        android:layout_below="@+id/tvAddQuantity"
+        android:gravity="center"
+        android:text="Price" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnAddElec"
+        android:text="Add to cart"
+        android:background="@drawable/btn_style"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_below="@+id/tvAddPrice"
+        android:layout_marginTop="20dp"/>
+
+
+
+</RelativeLayout>
