@@ -68,7 +68,7 @@ public class ElectronicAdapter  extends RecyclerView.Adapter<ElectronicAdapter.E
                 Intent intent=new Intent(mContext, ElectronicCartActivity.class);
                 intent.putExtra("image",electronic.getImage());
                 intent.putExtra("name",electronic.getName());
-                intent.putExtra("location",electronic.getQuantity());
+                intent.putExtra("quantity",electronic.getQuantity());
                 intent.putExtra("price",electronic.getPrice());
 
                 mContext.startActivity(intent);
