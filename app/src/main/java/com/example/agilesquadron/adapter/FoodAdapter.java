@@ -1,6 +1,7 @@
 package com.example.agilesquadron.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.agilesquadron.R;
 import com.example.agilesquadron.model.Food;
 import com.example.agilesquadron.strictmode.StrictModeClass;
+import com.example.agilesquadron.ui.FoodCartActivity;
 import com.example.agilesquadron.ui.url.Url;
 
 import java.io.IOException;
@@ -63,18 +65,18 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
             e.printStackTrace();
         }
 
-//        holder.card1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent=new Intent(mContext, BedCartActivity.class);
-//                intent.putExtra("image",bed.getImage());
-//                intent.putExtra("name",bed.getName());
-//                intent.putExtra("location",bed.getLocation());
-//                intent.putExtra("price",bed.getPrice());
-//
-//                mContext.startActivity(intent);
-//            }
-//        });
+        holder.card1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(mContext, FoodCartActivity.class);
+                intent.putExtra("image",food.getImage());
+                intent.putExtra("name",food.getName());
+                intent.putExtra("quantity",food.getQuantity());
+                intent.putExtra("price",food.getPrice());
+
+                mContext.startActivity(intent);
+            }
+        });
 //
 
     }
