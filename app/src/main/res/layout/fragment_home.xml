@@ -61,9 +61,12 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView_b"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbars="vertical"
-            app:fastScrollEnabled="false" />
+            android:layout_height="200dp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="134dp"
+            android:src="@drawable/c" />
 
         <TextView
             android:layout_width="match_parent"
@@ -76,11 +79,13 @@
             android:fontFamily="cursive"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView_d"
+            android:id="@+id/recyclerView_c"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"/>
+            android:layout_height="200dp"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="144dp"
+            android:src="@drawable/g" />
 
         <TextView
             android:layout_width="match_parent"
@@ -93,14 +98,11 @@
             android:fontFamily="cursive"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView_c"
+            android:id="@+id/recyclerView_d"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="200dp"/>
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="144dp"
-            android:src="@drawable/g" />
+
 
         <TextView
             android:layout_width="match_parent"
