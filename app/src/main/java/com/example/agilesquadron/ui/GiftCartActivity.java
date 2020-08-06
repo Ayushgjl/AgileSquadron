@@ -10,11 +10,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.agilesquadron.R;
+import com.example.agilesquadron.api.MyCartApi;
+import com.example.agilesquadron.model.Cart;
+import com.example.agilesquadron.ui.url.Url;
 
 import java.io.InputStream;
 import java.net.URL;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class GiftCartActivity extends AppCompatActivity {
 
