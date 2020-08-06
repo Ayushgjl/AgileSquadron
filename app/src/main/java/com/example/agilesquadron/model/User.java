@@ -19,6 +19,10 @@ public class User implements Serializable {
         this.image = image;
     }
 
+    public User() {
+
+    }
+
     public String getFirstName() {
         return firstName;
     }
