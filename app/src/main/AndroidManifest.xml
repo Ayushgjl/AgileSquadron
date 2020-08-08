@@ -25,7 +25,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".UpdateActivity"></activity>
+        <activity android:name=".ui.ClotheCartActivity"></activity>
+        <activity android:name=".ui.GiftCartActivity" />
+        <activity android:name=".UpdateActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".SplashActivity" />
         <activity
