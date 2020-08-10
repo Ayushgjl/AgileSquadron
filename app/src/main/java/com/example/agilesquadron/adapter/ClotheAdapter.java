@@ -1,6 +1,7 @@
 package com.example.agilesquadron.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.agilesquadron.R;
 import com.example.agilesquadron.model.Clothe;
 import com.example.agilesquadron.strictmode.StrictModeClass;
+import com.example.agilesquadron.ui.ClotheCartActivity;
 import com.example.agilesquadron.ui.url.Url;
 
 import java.io.IOException;
@@ -57,19 +59,19 @@ public class ClotheAdapter extends RecyclerView.Adapter<ClotheAdapter.ClotheView
             e.printStackTrace();
         }
 
-//        holder.card1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent=new Intent(mContext, BedCartActivity.class);
-//                intent.putExtra("image",bed.getImage());
-//                intent.putExtra("name",bed.getName());
-//                intent.putExtra("location",bed.getLocation());
-//                intent.putExtra("price",bed.getPrice());
-//
-//                mContext.startActivity(intent);
-//            }
-//        });
-//
+        holder.card3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(mContext, ClotheCartActivity.class);
+                intent.putExtra("image",clothe.getImage());
+                intent.putExtra("name",clothe.getName());
+                intent.putExtra("quantity",clothe.getQuantity());
+                intent.putExtra("price",clothe.getPrice());
+
+                mContext.startActivity(intent);
+            }
+        });
+
 
 
     }

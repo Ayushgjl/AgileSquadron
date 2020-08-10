@@ -20,12 +20,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.agilesquadron.R;
+import com.example.agilesquadron.adapter.ClotheAdapter;
 import com.example.agilesquadron.adapter.ElectronicAdapter;
 import com.example.agilesquadron.adapter.FoodAdapter;
+import com.example.agilesquadron.adapter.GiftAdapter;
+import com.example.agilesquadron.api.CApi;
 import com.example.agilesquadron.api.EApi;
 import com.example.agilesquadron.api.FoodApi;
+import com.example.agilesquadron.api.GApi;
+import com.example.agilesquadron.model.Clothe;
 import com.example.agilesquadron.model.Electronic;
 import com.example.agilesquadron.model.Food;
+import com.example.agilesquadron.model.Gift;
 import com.example.agilesquadron.ui.url.Url;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageClickListener;
@@ -47,6 +53,14 @@ public class HomeFragment extends Fragment {
     List<Electronic> eList;
     ElectronicAdapter ElectronicAdapter;
 
+    List<Clothe> cList;
+    ClotheAdapter ClotheAdapter;
+
+    List<Gift> gList;
+    GiftAdapter GiftAdapter;
+
+
+
     private int[] mImages=new int[]{
             R.drawable.slide1,R.drawable.slide2,R.drawable.slide3,R.drawable.slide4
     };
@@ -55,8 +69,8 @@ public class HomeFragment extends Fragment {
             "food","electronic","clothes","gifts"
     };
 
-    RecyclerView recyclerView_a, recyclerView_b;
-    ImageView card1,card2,facebook,insta;
+    RecyclerView recyclerView_a, recyclerView_b, recyclerView_c, recyclerView_d;
+    ImageView card1,card2,card3, card4, facebook,insta;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -66,8 +80,12 @@ public class HomeFragment extends Fragment {
 
         recyclerView_a=root.findViewById(R.id.recyclerView_a);
         recyclerView_b=root.findViewById(R.id.recyclerView_b);
+        recyclerView_c=root.findViewById(R.id.recyclerView_c);
+        recyclerView_d=root.findViewById(R.id.recyclerView_d);
         card1=root.findViewById(R.id.card1);
         card2=root.findViewById(R.id.card2);
+        card3=root.findViewById(R.id.card3);
+        card4=root.findViewById(R.id.card4);
         facebook=root.findViewById(R.id.facebook);
         insta=root.findViewById(R.id.insta);
 
@@ -108,8 +126,13 @@ public class HomeFragment extends Fragment {
 
         Food();
         Electronic();
+//        Clothe();
+//        Gift();
+
         return root;
     }
+
+
 
     private void Food(){
         foodList = new ArrayList<>();
@@ -168,4 +191,62 @@ public class HomeFragment extends Fragment {
             }
         });
     }
+
+//    private void Clothe(){
+//        cList = new ArrayList<>();
+//
+//        CApi F = Url.getInstance().create(CApi.class);
+//        Call<List<Clothe>> listCall=F.getClothe();
+//        listCall.enqueue(new Callback<List<Clothe>>() {
+//            @Override
+//            public void onResponse(Call<List<Clothe>> call, Response<List<Clothe>> response) {
+//                if (!response.isSuccessful()){
+//                    Toast.makeText(getContext(), "Error" + response.code(), Toast.LENGTH_SHORT).show();
+//                }
+//
+//                List<Clothe> cList1=response.body();
+//                ClotheAdapter=new ClotheAdapter(getContext(),cList1);
+//                recyclerView_c.setAdapter(ClotheAdapter);
+//                recyclerView_c.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
+//                recyclerView_c.setHasFixedSize(true);
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<Clothe>> call, Throwable t) {
+//
+//                Log.d("Error Message", "Error" + t.getLocalizedMessage());
+//                Toast.makeText(getActivity(), "Error", Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
+//    }
+
+//    private void Gift(){
+//        gList = new ArrayList<>();
+//
+//        GApi F = Url.getInstance().create(GApi.class);
+//        Call<List<Gift>> listCall=F.getGift();
+//        listCall.enqueue(new Callback<List<Gift>>() {
+//            @Override
+//            public void onResponse(Call<List<Gift>> call, Response<List<Gift>> response) {
+//                if (!response.isSuccessful()){
+//                    Toast.makeText(getContext(), "Error" + response.code(), Toast.LENGTH_SHORT).show();
+//                }
+//
+//                List<Gift> gList1=response.body();
+//                GiftAdapter=new GiftAdapter(getContext(),gList1);
+//                recyclerView_d.setAdapter(GiftAdapter);
+//                recyclerView_d.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
+//                recyclerView_d.setHasFixedSize(true);
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<Gift>> call, Throwable t) {
+//
+//                Log.d("Error Message", "Error" + t.getLocalizedMessage());
+//                Toast.makeText(getActivity(), "Error", Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
+//    }
 }
