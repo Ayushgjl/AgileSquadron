@@ -79,7 +79,7 @@
             android:fontFamily="cursive"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView_c"
+            android:id="@+id/recyclerView_d"
             android:layout_width="match_parent"
             android:layout_height="200dp"/>
         <ImageView
@@ -98,7 +98,7 @@
             android:fontFamily="cursive"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView_d"
+            android:id="@+id/recyclerView_c"
             android:layout_width="match_parent"
             android:layout_height="200dp"/>
 
