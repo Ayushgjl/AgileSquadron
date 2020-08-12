@@ -18,7 +18,7 @@ public class LoginTest {
 
     @Test
     public void Login(){
-        com.example.agilesquadron.model.username Username = new username("ayushgjl011","ayushgjl011");
+        com.example.agilesquadron.model.username Username = new username("arjudutta","arjudutta");
         UserApi userApi = Url.getInstance().create(UserApi.class);
         Call<SignUpResponse> usersCall = userApi.checklogin(Username);
 
